@@ -14,7 +14,7 @@ export const FunctionalCreateDogForm = ({
 }) => {
   const [dogName, setDogName] = useState("");
   const [dogDesc, setDogDesc] = useState("");
-  const [dogImage, setDogImage] = useState("");
+  const [dogImage, setDogImage] = useState(defaultSelectedImage);
   return (
     <form
       action=""

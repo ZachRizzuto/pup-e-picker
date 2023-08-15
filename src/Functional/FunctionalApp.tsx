@@ -43,7 +43,13 @@ export function FunctionalApp() {
         setActive={(number) => setActive(number)}
       >
         {active != 2 ? (
-          <FunctionalDogs dogs={dogs} isLoading={isLoading} active={active} />
+          <FunctionalDogs
+            dogs={dogs}
+            isLoading={isLoading}
+            active={active}
+            setDogs={(dogs: Dog[]) => setDogs(dogs)}
+            setIsLoading={(bool: boolean) => setIsLoading(bool)}
+          />
         ) : (
           <FunctionalCreateDogForm
             submit={(dog: Omit<Dog, "id">) => createDog(dog)}

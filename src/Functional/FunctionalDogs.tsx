@@ -2,15 +2,20 @@ import { ReactNode } from "react";
 import { DogCard } from "../Shared/DogCard";
 import { Dog } from "../types";
 import "./dogs.css";
+import { Requests } from "../api";
 
 export const FunctionalDogs = ({
   dogs,
   isLoading,
   active,
+  setDogs,
+  setIsLoading,
 }: {
   dogs: Dog[];
   isLoading: boolean;
   active: number | null;
+  setDogs: (dogs: Dog[]) => void;
+  setIsLoading: (bool: boolean) => void;
 }) => {
   return (
     <>
@@ -27,13 +32,25 @@ export const FunctionalDogs = ({
               }}
               key={dog.id}
               onTrashIconClick={() => {
-                alert("clicked trash");
+                setIsLoading(true);
+                Requests.deleteDog(dog.id)
+                  .then(() => Requests.getAllDogs())
+                  .then((dogs) => setDogs(dogs))
+                  .then(() => setIsLoading(false));
               }}
               onHeartClick={() => {
-                alert("clicked heart");
+                setIsLoading(true);
+                Requests.updateDog(false, dog.id)
+                  .then(() => Requests.getAllDogs())
+                  .then((dogs) => setDogs(dogs))
+                  .then(() => setIsLoading(false));
               }}
               onEmptyHeartClick={() => {
-                alert("clicked empty heart");
+                setIsLoading(true);
+                Requests.updateDog(true, dog.id)
+                  .then(() => Requests.getAllDogs())
+                  .then((dogs) => setDogs(dogs))
+                  .then(() => setIsLoading(false));
               }}
               isLoading={isLoading}
             />
@@ -52,13 +69,25 @@ export const FunctionalDogs = ({
                 }}
                 key={dog.id}
                 onTrashIconClick={() => {
-                  alert("clicked trash");
+                  setIsLoading(true);
+                  Requests.deleteDog(dog.id)
+                    .then(() => Requests.getAllDogs())
+                    .then((dogs) => setDogs(dogs))
+                    .then(() => setIsLoading(false));
                 }}
                 onHeartClick={() => {
-                  alert("clicked heart");
+                  setIsLoading(true);
+                  Requests.updateDog(false, dog.id)
+                    .then(() => Requests.getAllDogs())
+                    .then((dogs) => setDogs(dogs))
+                    .then(() => setIsLoading(false));
                 }}
                 onEmptyHeartClick={() => {
-                  alert("clicked empty heart");
+                  setIsLoading(true);
+                  Requests.updateDog(false, dog.id)
+                    .then(() => Requests.getAllDogs())
+                    .then((dogs) => setDogs(dogs))
+                    .then(() => setIsLoading(false));
                 }}
                 isLoading={isLoading}
               />
@@ -77,13 +106,25 @@ export const FunctionalDogs = ({
                 }}
                 key={dog.id}
                 onTrashIconClick={() => {
-                  alert("clicked trash");
+                  setIsLoading(true);
+                  Requests.deleteDog(dog.id)
+                    .then(() => Requests.getAllDogs())
+                    .then((dogs) => setDogs(dogs))
+                    .then(() => setIsLoading(false));
                 }}
                 onHeartClick={() => {
-                  alert("clicked heart");
+                  setIsLoading(true);
+                  Requests.updateDog(false, dog.id)
+                    .then(() => Requests.getAllDogs())
+                    .then((dogs) => setDogs(dogs))
+                    .then(() => setIsLoading(false));
                 }}
                 onEmptyHeartClick={() => {
-                  alert("clicked empty heart");
+                  setIsLoading(true);
+                  Requests.updateDog(false, dog.id)
+                    .then(() => Requests.getAllDogs())
+                    .then((dogs) => setDogs(dogs))
+                    .then(() => setIsLoading(false));
                 }}
                 isLoading={isLoading}
               />

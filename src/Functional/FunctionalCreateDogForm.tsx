@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
+import { defaults } from "lodash-es";
 
 // use this as your default selected image
 const defaultSelectedImage = dogPictures.BlueHeeler;
@@ -15,6 +16,11 @@ export const FunctionalCreateDogForm = ({
   const [dogName, setDogName] = useState("");
   const [dogDesc, setDogDesc] = useState("");
   const [dogImage, setDogImage] = useState(defaultSelectedImage);
+  const resetForm = () => {
+    setDogName("");
+    setDogDesc("");
+    setDogImage(defaultSelectedImage);
+  };
   return (
     <form
       action=""
@@ -27,10 +33,7 @@ export const FunctionalCreateDogForm = ({
           description: dogDesc,
           isFavorite: false,
         });
-        console.log(dogName, dogDesc, dogImage);
-        setDogName("");
-        setDogDesc("");
-        setDogImage("");
+        resetForm();
       }}
     >
       <h4>Create a New Dog</h4>

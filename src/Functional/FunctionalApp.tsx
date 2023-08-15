@@ -20,6 +20,9 @@ export function FunctionalApp() {
       })
       .then(() => setIsLoading(false));
   };
+  const refetchDogs = async () => {
+    return Requests.getAllDogs().then((dogs) => setDogs(dogs));
+  };
   useEffect(() => {
     setIsLoading(true);
     Requests.getAllDogs()
@@ -47,7 +50,7 @@ export function FunctionalApp() {
             dogs={dogs}
             isLoading={isLoading}
             active={active}
-            setDogs={(dogs: Dog[]) => setDogs(dogs)}
+            refetchDogs={() => refetchDogs()}
             setIsLoading={(bool: boolean) => setIsLoading(bool)}
           />
         ) : (

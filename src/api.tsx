@@ -8,7 +8,7 @@ export const Requests = {
     fetch(`${baseUrl}/dogs`).then((response) => response.json()),
   // should create a dog in the database from a partial dog object
   // and return a promise with the result
-  postDog: async (dog: Omit<Dog, "id">) => {
+  postDog: async (dog: Omit<Dog, "id">): Promise<Dog> => {
     return fetch(`${baseUrl}/dogs/`, {
       method: "POST",
       headers: {
@@ -27,7 +27,7 @@ export const Requests = {
       .catch((err) => console.log(err));
   },
 
-  updateDog: async (patch: boolean, id: number) => {
+  updateDog: async (patch: boolean, id: number): Promise<Dog> => {
     return fetch(`${baseUrl}/dogs/${id}`, {
       method: "PATCH",
       headers: {

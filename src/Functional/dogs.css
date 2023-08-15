@@ -9,7 +9,7 @@
 
 .spinny {
   font-size: 50px;
-  position: absolute;
+  position: fixed;
   width: 100px;
   top: 46%;
   left: 46%;

@@ -8,13 +8,13 @@ export const FunctionalDogs = ({
   dogs,
   isLoading,
   active,
-  setDogs,
+  refetchDogs,
   setIsLoading,
 }: {
   dogs: Dog[];
   isLoading: boolean;
   active: number | null;
-  setDogs: (dogs: Dog[]) => void;
+  refetchDogs: () => void;
   setIsLoading: (bool: boolean) => void;
 }) => {
   return (
@@ -34,22 +34,19 @@ export const FunctionalDogs = ({
               onTrashIconClick={() => {
                 setIsLoading(true);
                 Requests.deleteDog(dog.id)
-                  .then(() => Requests.getAllDogs())
-                  .then((dogs) => setDogs(dogs))
+                  .then(() => refetchDogs())
                   .then(() => setIsLoading(false));
               }}
               onHeartClick={() => {
                 setIsLoading(true);
                 Requests.updateDog(false, dog.id)
-                  .then(() => Requests.getAllDogs())
-                  .then((dogs) => setDogs(dogs))
+                  .then(() => refetchDogs())
                   .then(() => setIsLoading(false));
               }}
               onEmptyHeartClick={() => {
                 setIsLoading(true);
                 Requests.updateDog(true, dog.id)
-                  .then(() => Requests.getAllDogs())
-                  .then((dogs) => setDogs(dogs))
+                  .then(() => refetchDogs())
                   .then(() => setIsLoading(false));
               }}
               isLoading={isLoading}
@@ -71,22 +68,19 @@ export const FunctionalDogs = ({
                 onTrashIconClick={() => {
                   setIsLoading(true);
                   Requests.deleteDog(dog.id)
-                    .then(() => Requests.getAllDogs())
-                    .then((dogs) => setDogs(dogs))
+                    .then(() => refetchDogs())
                     .then(() => setIsLoading(false));
                 }}
                 onHeartClick={() => {
                   setIsLoading(true);
                   Requests.updateDog(false, dog.id)
-                    .then(() => Requests.getAllDogs())
-                    .then((dogs) => setDogs(dogs))
+                    .then(() => refetchDogs())
                     .then(() => setIsLoading(false));
                 }}
                 onEmptyHeartClick={() => {
                   setIsLoading(true);
-                  Requests.updateDog(false, dog.id)
-                    .then(() => Requests.getAllDogs())
-                    .then((dogs) => setDogs(dogs))
+                  Requests.updateDog(true, dog.id)
+                    .then(() => refetchDogs())
                     .then(() => setIsLoading(false));
                 }}
                 isLoading={isLoading}
@@ -108,22 +102,19 @@ export const FunctionalDogs = ({
                 onTrashIconClick={() => {
                   setIsLoading(true);
                   Requests.deleteDog(dog.id)
-                    .then(() => Requests.getAllDogs())
-                    .then((dogs) => setDogs(dogs))
+                    .then(() => refetchDogs())
                     .then(() => setIsLoading(false));
                 }}
                 onHeartClick={() => {
                   setIsLoading(true);
                   Requests.updateDog(false, dog.id)
-                    .then(() => Requests.getAllDogs())
-                    .then((dogs) => setDogs(dogs))
+                    .then(() => refetchDogs())
                     .then(() => setIsLoading(false));
                 }}
                 onEmptyHeartClick={() => {
                   setIsLoading(true);
-                  Requests.updateDog(false, dog.id)
-                    .then(() => Requests.getAllDogs())
-                    .then((dogs) => setDogs(dogs))
+                  Requests.updateDog(true, dog.id)
+                    .then(() => refetchDogs())
                     .then(() => setIsLoading(false));
                 }}
                 isLoading={isLoading}

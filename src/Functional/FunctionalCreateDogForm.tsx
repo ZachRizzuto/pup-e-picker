@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { dogPictures } from "../dog-pictures";
 import { Dog } from "../types";
-import { defaults } from "lodash-es";
 
 // use this as your default selected image
 const defaultSelectedImage = dogPictures.BlueHeeler;

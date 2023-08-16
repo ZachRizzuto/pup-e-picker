@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { DogCard } from "../Shared/DogCard";
 import { Dog } from "../types";
 import "./dogs.css";

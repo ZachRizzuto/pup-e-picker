@@ -13,8 +13,7 @@ export function FunctionalApp() {
   const createDog = (dog: Omit<Dog, "id">) => {
     setIsLoading(true);
     Requests.postDog(dog)
-      .then(Requests.getAllDogs)
-      .then((dogs) => setDogs(dogs))
+      .then(() => refetchDogs())
       .then(() => {
         toast.success("Dog created!");
       })

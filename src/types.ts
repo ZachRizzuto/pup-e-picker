@@ -6,3 +6,14 @@ export type Dog = {
   isFavorite: boolean;
   id: number;
 };
+
+export type classAppState = {
+  isLoading: boolean;
+  dogs: Dog[];
+  active: string | null;
+};
+export type classFormState = {
+  dogName: string;
+  dogDesc: string;
+  dogImage: string;
+};

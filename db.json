@@ -1,13 +1,6 @@
 {
   "dogs": [
     {
-      "name": "Mauricio",
-      "image": "/assets/boxer.png",
-      "description": "Bedfordshire bijou Mini plonk female extend Small salmon",
-      "isFavorite": false,
-      "id": 6
-    },
-    {
       "name": "Wanda",
       "image": "/assets/boxer.png",
       "description": "Royce Corporate invoice knowledge Agent",
@@ -15,25 +8,53 @@
       "id": 8
     },
     {
-      "name": "Marjolaine",
-      "image": "/assets/dalmation.png",
-      "description": "Massachusetts contingency indigo radian Architect",
-      "isFavorite": true,
-      "id": 12
-    },
-    {
       "name": "Dorcas",
       "image": "/assets/boxer.png",
       "description": "Uganda SSL Soul stall Silver male Frozen Southeast",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 13
     },
     {
-      "name": "Kelsi",
-      "image": "/assets/chihuahua.avif",
-      "description": "homeschool person interactive Group simplification Virginia internal",
+      "name": "Dogg",
+      "image": "/assets/dalmation.png",
+      "description": "Dogg",
+      "isFavorite": false,
+      "id": 14
+    },
+    {
+      "name": "",
+      "image": "/assets/cowardly.png",
+      "description": "",
+      "isFavorite": false,
+      "id": 15
+    },
+    {
+      "name": "",
+      "image": "/assets/blue-heeler.png",
+      "description": "",
+      "isFavorite": true,
+      "id": 16
+    },
+    {
+      "name": "",
+      "image": "/assets/blue-heeler.png",
+      "description": "",
       "isFavorite": false,
       "id": 17
+    },
+    {
+      "name": "",
+      "image": "/assets/blue-heeler.png",
+      "description": "",
+      "isFavorite": false,
+      "id": 18
+    },
+    {
+      "name": "",
+      "image": "/assets/blue-heeler.png",
+      "description": "",
+      "isFavorite": false,
+      "id": 19
     }
   ]
 }

@@ -1,5 +1,5 @@
 // you can use this type for react children if you so choose
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 export const FunctionalSection = ({

@@ -17,7 +17,8 @@ export function FunctionalApp() {
       .then(() => {
         toast.success("Dog created!");
       })
-      .then(() => setIsLoading(false));
+      .catch((err) => err)
+      .finally(() => setIsLoading(false));
   };
   const refetchDogs = async () => {
     return Requests.getAllDogs().then((dogs) => setDogs(dogs));

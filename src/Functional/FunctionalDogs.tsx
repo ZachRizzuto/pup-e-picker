@@ -40,19 +40,22 @@ export const FunctionalDogs = ({
                 setIsLoading(true);
                 Requests.deleteDog(dog.id)
                   .then(() => refetchDogs())
-                  .then(() => setIsLoading(false));
+                  .catch((err) => err)
+                  .finally(() => setIsLoading(false));
               }}
               onHeartClick={() => {
                 setIsLoading(true);
                 Requests.updateDog(false, dog.id)
                   .then(() => refetchDogs())
-                  .then(() => setIsLoading(false));
+                  .catch((err) => err)
+                  .finally(() => setIsLoading(false));
               }}
               onEmptyHeartClick={() => {
                 setIsLoading(true);
                 Requests.updateDog(true, dog.id)
                   .then(() => refetchDogs())
-                  .then(() => setIsLoading(false));
+                  .catch((err) => err)
+                  .finally(() => setIsLoading(false));
               }}
               isLoading={isLoading}
             />

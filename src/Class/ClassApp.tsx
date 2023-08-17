@@ -16,7 +16,8 @@ export class ClassApp extends Component {
     this.setState({ isLoading: true });
     Requests.getAllDogs()
       .then((dogs) => this.setState({ dogs: dogs }))
-      .then(() => this.setState({ isLoading: false }));
+      .catch((err) => err)
+      .finally(() => this.setState({ isLoading: false }));
   }
   createDog(dog: Omit<Dog, "id">) {
     this.setState({ isLoading: true });
@@ -25,7 +26,8 @@ export class ClassApp extends Component {
       .then(() => {
         toast.success("Dog created!");
       })
-      .then(() => this.setState({ isLoading: false }));
+      .catch((err) => err)
+      .finally(() => this.setState({ isLoading: false }));
   }
   async refetchDogs() {
     return Requests.getAllDogs().then((dogs) => this.setState({ dogs: dogs }));

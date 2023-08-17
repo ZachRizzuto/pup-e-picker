@@ -3,14 +3,14 @@ import { ClassSection } from "./ClassSection";
 import { ClassDogs } from "./ClassDogs";
 import { ClassCreateDogForm } from "./ClassCreateDogForm";
 import { Requests } from "../api";
-import { Dog, classAppState } from "../types";
+import { ActiveTab, Dog, classAppState } from "../types";
 import toast from "react-hot-toast";
 
 export class ClassApp extends Component {
   state: classAppState = {
     isLoading: false,
     dogs: [],
-    active: null,
+    active: "all-dogs",
   };
   componentDidMount(): void {
     this.setState({ isLoading: true });
@@ -49,7 +49,9 @@ export class ClassApp extends Component {
           active={active}
           setActive={(number) => this.setState({ active: number })}
         >
-          {active != 2 ? (
+          {(
+            ["all-dogs", "favorite-dogs", "unfavorite-dogs"] as ActiveTab[]
+          ).includes(active) ? (
             <ClassDogs
               dogs={dogs}
               isLoading={isLoading}

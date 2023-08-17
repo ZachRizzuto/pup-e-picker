@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { FunctionalCreateDogForm } from "./FunctionalCreateDogForm";
 import { FunctionalDogs } from "./FunctionalDogs";
 import { FunctionalSection } from "./FunctionalSection";
-import { Dog } from "../types";
+import { ActiveTab, Dog } from "../types";
 import { Requests } from "../api";
 import toast, { Toaster } from "react-hot-toast";
 
 export function FunctionalApp() {
   const [dogs, setDogs] = useState<Dog[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState<ActiveTab>("all-dogs");
   const createDog = (dog: Omit<Dog, "id">) => {
     setIsLoading(true);
     Requests.postDog(dog)
@@ -44,7 +44,9 @@ export function FunctionalApp() {
         active={active}
         setActive={(number) => setActive(number)}
       >
-        {active != 2 ? (
+        {(
+          ["all-dogs", "favorite-dogs", "unfavorite-dogs"] as ActiveTab[]
+        ).includes(active) ? (
           <FunctionalDogs
             dogs={dogs}
             isLoading={isLoading}

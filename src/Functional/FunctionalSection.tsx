@@ -1,6 +1,7 @@
 // you can use this type for react children if you so choose
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { ActiveTab } from "../types.ts";
 
 export const FunctionalSection = ({
   favoritedCount,
@@ -11,8 +12,8 @@ export const FunctionalSection = ({
 }: {
   favoritedCount: number;
   unfavoritedCount: number;
-  active: number | null;
-  setActive: (number: number | null) => void;
+  active: ActiveTab;
+  setActive: (input: ActiveTab) => void;
   children: ReactNode;
 }) => {
   // const [active, setActive] = useState<number | null>(null);
@@ -26,9 +27,11 @@ export const FunctionalSection = ({
         <div className="selectors">
           {/* This should display the favorited count */}
           <div
-            className={`selector ${active === 0 && "active"}`}
+            className={`selector ${active === "favorite-dogs" && "active"}`}
             onClick={() => {
-              active === 0 ? setActive(null) : setActive(0);
+              active === "favorite-dogs"
+                ? setActive("all-dogs")
+                : setActive("favorite-dogs");
             }}
           >
             favorited ( {favoritedCount} )
@@ -36,17 +39,21 @@ export const FunctionalSection = ({
 
           {/* This should display the unfavorited count */}
           <div
-            className={`selector ${active === 1 && "active"}`}
+            className={`selector ${active === "unfavorite-dogs" && "active"}`}
             onClick={() => {
-              active === 1 ? setActive(null) : setActive(1);
+              active === "unfavorite-dogs"
+                ? setActive("all-dogs")
+                : setActive("unfavorite-dogs");
             }}
           >
             unfavorited ( {unfavoritedCount} )
           </div>
           <div
-            className={`selector ${active === 2 && "active"}`}
+            className={`selector ${active === "create-dog" && "active"}`}
             onClick={() => {
-              active === 2 ? setActive(null) : setActive(2);
+              active === "create-dog"
+                ? setActive("all-dogs")
+                : setActive("create-dog");
             }}
           >
             create dog

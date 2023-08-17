@@ -1,60 +1,32 @@
 {
   "dogs": [
     {
-      "name": "Wanda",
-      "image": "/assets/boxer.png",
-      "description": "Royce Corporate invoice knowledge Agent",
-      "isFavorite": true,
-      "id": 8
+      "name": "Hey Jon",
+      "image": "/assets/blue-heeler.png",
+      "description": "Jon is awesome",
+      "isFavorite": false,
+      "id": 1
     },
     {
-      "name": "Dorcas",
-      "image": "/assets/boxer.png",
-      "description": "Uganda SSL Soul stall Silver male Frozen Southeast",
-      "isFavorite": true,
-      "id": 13
-    },
-    {
-      "name": "Dogg",
+      "name": "Jon is Rad",
       "image": "/assets/dalmation.png",
-      "description": "Dogg",
+      "description": "He codes like a pro",
       "isFavorite": false,
-      "id": 14
+      "id": 2
     },
     {
-      "name": "",
-      "image": "/assets/cowardly.png",
-      "description": "",
-      "isFavorite": false,
-      "id": 15
-    },
-    {
-      "name": "",
-      "image": "/assets/blue-heeler.png",
-      "description": "",
+      "name": "Jon",
+      "image": "/assets/chihuahua.avif",
+      "description": "He is awesome!",
       "isFavorite": true,
-      "id": 16
+      "id": 3
     },
     {
-      "name": "",
-      "image": "/assets/blue-heeler.png",
-      "description": "",
-      "isFavorite": false,
-      "id": 17
-    },
-    {
-      "name": "",
-      "image": "/assets/blue-heeler.png",
-      "description": "",
-      "isFavorite": false,
-      "id": 18
-    },
-    {
-      "name": "",
-      "image": "/assets/blue-heeler.png",
-      "description": "",
-      "isFavorite": false,
-      "id": 19
+      "name": "Loading Doggy",
+      "image": "/assets/cowardly.png",
+      "description": "No more annoying loading overlay doggy",
+      "isFavorite": true,
+      "id": 4
     }
   ]
 }

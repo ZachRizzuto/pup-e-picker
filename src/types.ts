@@ -10,10 +10,16 @@ export type Dog = {
 export type classAppState = {
   isLoading: boolean;
   dogs: Dog[];
-  active: string | null;
+  active: ActiveTab;
 };
 export type classFormState = {
   dogName: string;
   dogDesc: string;
   dogImage: string;
 };
+
+export type ActiveTab =
+  | "all-dogs"
+  | "favorite-dogs"
+  | "unfavorite-dogs"
+  | "create-dog";
